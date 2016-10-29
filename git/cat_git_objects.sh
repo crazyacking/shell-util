@@ -20,16 +20,16 @@ awk '{print $9}'|\
 #提取objects
 grep -E '^./\w+'|\
 #生成显示object内容的命令（包装 git cat-file 命令）
-awk -F / '{print "\
     #输出object描述前缀
-    echo -n =======object:&&\
     #获取object类型并输出，不换行
-    git cat-file -t "$2$3"| xargs echo -n && \
     #输出object名称和后缀
-    echo :"$2$3"===== && \
     #输出object内容
-    git cat-file -p "$2$3" &&\
     #换行
+awk -F / '{print "\
+    echo -n =======object:&&\
+    git cat-file -t "$2$3"| xargs echo -n && \
+    echo :"$2$3"===== && \
+    git cat-file -p "$2$3" &&\
     echo\
 "}'|\
 # 执行命令
