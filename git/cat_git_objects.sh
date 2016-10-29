@@ -1,5 +1,9 @@
 #!/bin/bash
-# 放到 .git目录下面
+
+# 使用说明 ：将本shell放到.git目录下面
+# 添加执行权限： chmod +x cat_git_objects.sh
+# 在.git目录中执行： ./cat_git_objects.sh
+# 执行结果： 把所以objects按照修改时间顺序排列，然后依次显示内容
 
 # 进入目录
 cd objects
